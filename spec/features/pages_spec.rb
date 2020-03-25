@@ -1,5 +1,12 @@
+require 'spec_helper'
 require 'rails_helper'
 
-RSpec.feature "Pages", type: :feature do
-  pending "add some scenarios (or delete) #{__FILE__}"
+RSpec.describe 'Pages' do
+  context 'test run' do
+    scenario 'should be successful' do
+      visit('/')
+      expect(page).to have_content("Testing")
+      puts " Finally' "
+    end
+  end
 end
