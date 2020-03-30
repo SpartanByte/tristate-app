@@ -1,0 +1,17 @@
+<%= content_tag :h1, "Create a new page"%>
+<%= form_for :page, url: pages_path do |f| %>
+    <div class="form-group">
+        <%= f.label :title, "Page Title", class: "control-label" %>
+        <%= f.text_field :title, required: true, class:"form-control"%>
+    </div>
+    <div class="form-group">
+        <%= f.label :page_url, "Page Url", class: "control-label" %>
+        <%= f.text_field :page_url, required: true, class:"form-control"%>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :id, "Page ID", class: "control-label" %>
+        <%= f.number_field :page_id, required: true, class:"form-control" %>
+    </div>
+    <%= f.submit "Create Page", class: "btn btn-primary" %>
+<%end%>
