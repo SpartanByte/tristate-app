@@ -1,12 +1,11 @@
-<%= content_tag :h1, "Welcome Home"%>
+<%= content_tag :h1, "Welcome Home", class:""%>
 <div id="test">
     <h2><%= link_to "Go To Front End Testing", front_end_testing_path %></h2>
-
-
     <% if user_signed_in?%>
+        <h2>User: <%= current_user.email %></h2>
         <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
     <%else%>
-         <%= link_to "Sign In", new_user_session_path%><br>
-          <%= link_to "Sign Up", new_user_registration_path %><br>
+        <%= link_to "Sign In", new_user_session_path%><br>
+        <%= link_to "Sign Up", new_user_registration_path %><br>
     <%end%>
 </div>
